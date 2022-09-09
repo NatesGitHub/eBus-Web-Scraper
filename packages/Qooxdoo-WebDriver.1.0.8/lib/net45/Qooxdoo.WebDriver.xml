@@ -1,0 +1,2194 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Qooxdoo.WebDriver</name>
+    </assembly>
+    <members>
+        <member name="T:Qooxdoo.WebDriver.By">
+            <summary>
+            Provides a mechanism by which to find elements within a document.
+            </summary>
+        </member>
+        <member name="F:Qooxdoo.WebDriver.By.Driver">
+            <summary>
+            The QxWebDriver to use
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.By.SetQxWebDriver(Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Sets the QxWebDriver to use.
+            </summary>
+            <param name="driver">The QxWebDriver.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.By.Qxh(System.String,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Searches for elements by traversing the qooxdoo application's widget  hierarchy.
+            See the <a href="TODO">Qxh locator manual page</a> for details.
+            This strategy will ignore any widgets that are not currently visible, as
+            determined by checking the qooxdoo property <a href="http://demo.qooxdoo.org/current/apiviewer/#qx.ui.Core.Widget~isSeeable!method_public">seeable</a>.
+            </summary>
+            <param name="locator">Locator specification</param>
+            <param name="driver">The QxWebDriver to use.</param>
+            <returns>By.ByQxh.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.By.Qxh(System.String)">
+             <summary>
+             Searches for elements by traversing the qooxdoo application's widget  hierarchy.
+             See the <a href="TODO">Qxh locator manual page</a> for details.
+            
+             This strategy will ignore any widgets that are not currently visible, as
+             determined by checking the qooxdoo property <a href="http://demo.qooxdoo.org/current/apiviewer/#qx.ui.Core.Widget~isSeeable!method_public">seeable</a>.
+             </summary>
+             <param name="locator"> Locator specification </param>
+             <returns>By.ByQxh.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.By.Qxh(System.String,System.Nullable{System.Boolean},Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Searches for elements by traversing the qooxdoo application's widget
+            hierarchy. See the <a href="TODO">Qxh locator manual page</a> for details.
+            </summary>
+            <param name="locator">Locator specification</param>
+            <param name="onlySeeable"><code>false</code> if invisible widgets should be
+            traversed. Note that this can considerably increase execution time.</param>
+            <param name="driver">The QxWebDriver to use.</param>
+            <returns>configured ByQxh instance.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.By.Qxh(System.String,System.Nullable{System.Boolean})">
+            <summary>
+            Searches for elements by traversing the qooxdoo application's widget
+            hierarchy. See the <a href="TODO">Qxh locator manual page</a> for details.
+            </summary>
+            <param name="locator"> Locator specification </param>
+            <param name="onlySeeable"> <code>false</code> if invisible widgets should be
+            traversed. Note that this can considerably increase execution time. </param>
+            <returns>configured ByQxh instance.</returns>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.By.ByQxh">
+            <summary>
+            Mechanisms used to locate elements within a qooxdoo Desktop application.
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.By.ByQxh.#ctor(System.String,System.Nullable{System.Boolean})">
+            <summary>
+            Searches for elements by traversing the qooxdoo application's widget  hierarchy.
+            </summary>
+            <param name="locator"></param>
+            <param name="onlySeeable"></param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.By.ByQxh.FindElements(OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Finds all elements matching the criteria.
+            </summary>
+            <param name="context">An <see cref="T:OpenQA.Selenium.ISearchContext"/> object to use to search for the elements.</param>
+            <returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1"/> of all <see cref="T:OpenQA.Selenium.IWebElement">WebElements</see>
+            matching the current criteria, or an empty list if nothing matches.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.By.ByQxh.FindElement(OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Finds the first element matching the criteria.
+            </summary>
+            <param name="context">An <see cref="T:OpenQA.Selenium.ISearchContext"/> object to use to search for the elements.</param>
+            <returns>The first matching <see cref="T:OpenQA.Selenium.IWebElement"/> on the current context.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.By.ByQxh.ToString">
+            <summary>
+            Gets a string representation of the finder.
+            </summary>
+            <returns>The string displaying the finder content.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.By.Namespace(System.String)">
+            <summary>
+            Convert a widget namespace (including the widget's name) to a <see cref="T:Qooxdoo.WebDriver.By.ByQxh"/> locator string.
+            </summary>
+            <param name="namespace">The locator string.</param>
+            <returns>The converted locator string.</returns>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.Log.LogEntry">
+            <summary>
+            Adds a JSon string to the log.
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.Log.LogEntry.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.Log.LogEntry"/> class.
+            </summary>
+            <param name="json">The json string to add as a log entry.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.Log.LogEntry.ToString">
+            <summary>Returns a string that represents the current object.</summary>
+            <returns>A string that represents the current object.</returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.QxWebDriver">
+            <summary>
+            A Decorator that wraps a <see cref="T:OpenQA.Selenium.IWebDriver"/> object,  adding qooxdoo-specific features.
+            Note that the WebDriver used <strong>must</strong> implement the <see cref="T:OpenQA.Selenium.IJavaScriptExecutor"/> interface.
+            </summary>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.QxWebDriver.JsExecutor">
+            <summary>
+            Gets the javascritp executor.
+            </summary>
+            <value>
+            The javascritp executor.
+            </value>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.QxWebDriver.JsRunner">
+            <summary>
+            Gets the javascritp runner.
+            </summary>
+            <value>
+            The javascritp runner.
+            </value>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.#ctor(Qooxdoo.WebDriver.Browser)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.QxWebDriver"/> class.
+            </summary>
+            <param name="browser">The browser of the webdriver to wrap.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.#ctor(Qooxdoo.WebDriver.Browser,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.QxWebDriver" /> class.
+            </summary>
+            <param name="browser">The browser of the webdriver to wrap.</param>
+            <param name="implicitWaitSeconds">The implicit wait duration in seconds.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.#ctor(Qooxdoo.WebDriver.Browser,Qooxdoo.WebDriver.UI.IWidgetFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.QxWebDriver"/> class.
+            </summary>
+            <param name="browser">The browser of the webdriver to wrap.</param>
+            <param name="widgetFactory">The widget factory to use.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.#ctor(Qooxdoo.WebDriver.Browser,Qooxdoo.WebDriver.UI.IWidgetFactory,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.QxWebDriver" /> class.
+            </summary>
+            <param name="browser">The browser of the webdriver to wrap.</param>
+            <param name="widgetFactory">The widget factory to use.</param>
+            <param name="implicitWaitSeconds">The implicit wait duration in seconds.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.#ctor(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.QxWebDriver"/> class.
+            </summary>
+            <param name="webdriver">The webdriver to wrap.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.#ctor(OpenQA.Selenium.IWebDriver,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.QxWebDriver" /> class.
+            </summary>
+            <param name="webdriver">The webdriver to wrap.</param>
+            <param name="implicitWaitSeconds">The implicit wait duration in seconds.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.#ctor(OpenQA.Selenium.IWebDriver,Qooxdoo.WebDriver.UI.IWidgetFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.QxWebDriver"/> class.
+            </summary>
+            <param name="webdriver">The webdriver to wrap.</param>
+            <param name="widgetFactory">The widget factory to use.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.#ctor(OpenQA.Selenium.IWebDriver,Qooxdoo.WebDriver.UI.IWidgetFactory,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.QxWebDriver" /> class.
+            </summary>
+            <param name="webdriver">The webdriver to wrap.</param>
+            <param name="widgetFactory">The widget factory to use.</param>
+            <param name="implicitWaitSeconds">The implicit wait duration in seconds.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.QxAppIsReady">
+            <summary>
+            A condition that waits until the qooxdoo application in the browser is
+            ready (<code>qx.core.Init.getApplication()</code> returns anything truthy).
+            </summary>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.QxWebDriver.WebDriver">
+            <summary>
+            Gets the original WebDriver instance
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.FindWidget(OpenQA.Selenium.By,System.Int64)">
+            <summary>
+            Find the first matching <see cref="T:Qooxdoo.WebDriver.UI.IWidget"/> using the given method.
+            </summary>
+            <param name="by">The locating mechanism to use.</param>
+            <param name="timeoutInSeconds"> Time to wait for the widget in seconds</param>
+            <returns>The first matching widget on the current page.</returns>
+            <exception cref="T:OpenQA.Selenium.NoSuchElementException"> If no matching widget was found before the timeout elapsed </exception>
+            <seealso cref="T:Qooxdoo.WebDriver.By"/>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.FindWidget(OpenQA.Selenium.By)">
+            <summary>
+            Find the first matching <see cref="T:Qooxdoo.WebDriver.UI.IWidget"/> using the given method. Retry for up to <see cref="P:OpenQA.Selenium.ITimeouts.ImplicitWait"/> seconds 
+            before throwing.
+            </summary>
+            <param name="by">The locating mechanism to use.</param>
+            <returns>The first matching element on the current page.</returns>
+            <exception cref="T:OpenQA.Selenium.NoSuchElementException"> If no matching widget was found before the timeout elapsed </exception>
+            <seealso cref="T:Qooxdoo.WebDriver.By"/>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.WaitForWidget(OpenQA.Selenium.By,System.Int64)">
+            <summary>
+            Find the first matching <see cref="T:Qooxdoo.WebDriver.UI.IWidget"/> using the given method.
+            </summary>
+            <param name="by">The locating mechanism to use.</param>
+            <param name="timeoutInSeconds">The time to wait for the widget </param>
+            <returns>The first matching element on the current page.</returns>
+            <exception cref="T:OpenQA.Selenium.NoSuchElementException"> If no matching widget was found before the timeout elapsed </exception>
+            <seealso cref="T:Qooxdoo.WebDriver.By"/>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.GetWidgetForElement(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Gets an instance of <see cref="T:Qooxdoo.WebDriver.UI.IWidget"/> or one of its subclasses that
+            represents the qooxdoo widget containing the given element. </summary>
+            <param name="element"> A <see cref="T:OpenQA.Selenium.IWebElement"/> representing a DOM element that is part of a
+            qooxdoo widget </param>
+            <returns>Widget object.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.RegisterLogAppender">
+            <summary>
+            Registers a new log appender with the AUT's logging system. Entries can be
+            accessed using getLogEvents()
+            </summary>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.QxWebDriver.LogEvents">
+            <summary>
+            Retrieves the AUT's qx log entries. registerLogAppender() *must* be called
+            before this can be used.
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.RegisterGlobalErrorHandler">
+            <summary>
+            Registers a global error handler using qx.event.GlobalError.setErrorHandler
+            Caught exceptions can be retrieved using getCaughtErrors
+            </summary>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.QxWebDriver.CaughtErrors">
+            <summary>
+            Retrieves any exceptions caught by qooxdoo's global error handling.
+            RegisterGlobalErrorHandler *must* be called before this can be used.
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.GetTranslation(System.String)">
+            <summary>
+            Uses qooxdoo's localization support to get the currently active locale's translation for a string
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.GetTranslation(System.String,System.String)">
+            <summary>
+            Uses qooxdoo's localization support to get a specific locale's translation for a string
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.Close">
+            <summary>
+            Close the current window, quitting the browser if it is the last window currently open.
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.FindElement(OpenQA.Selenium.By)">
+            <summary>
+            Finds the first <see cref="T:OpenQA.Selenium.IWebElement" /> using the given method.
+            </summary>
+            <param name="by">The locating mechanism to use.</param>
+            <returns>The first matching <see cref="T:OpenQA.Selenium.IWebElement" /> on the current context.</returns>
+            <exception cref="T:OpenQA.Selenium.NoSuchElementException">If no element matches the criteria.</exception>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.FindElements(OpenQA.Selenium.By)">
+            <summary>
+            Finds all <see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> within the current context
+            using the given mechanism.
+            </summary>
+            <param name="by">The locating mechanism to use.</param>
+            <returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> of all <see cref="T:OpenQA.Selenium.IWebElement">WebElements</see>
+            matching the current criteria, or an empty list if nothing matches.</returns>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.QxWebDriver.Url">
+            <summary>
+            Gets or sets the URL the browser is currently displaying.
+            </summary>
+            <remarks>
+            Setting the <see cref="P:OpenQA.Selenium.IWebDriver.Url" /> property will load a new web page in the current browser window.
+            This is done using an HTTP GET operation, and the method will block until the
+            load is complete. This will follow redirects issued either by the server or
+            as a meta-redirect from within the returned HTML. Should a meta-redirect "rest"
+            for any duration of time, it is best to wait until this timeout is over, since
+            should the underlying page change while your test is executing the results of
+            future calls against this interface will be against the freshly loaded page.
+            </remarks>
+            <seealso cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.String)" />
+            <seealso cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.Uri)" />
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.WaitForQxApplication">
+            <summary>
+            Wait until qx.core.Init.getApplication() returns something truthy.
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.Init">
+            <summary>
+            Initializes the testing environment.
+            </summary>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.QxWebDriver.PageSource">
+            <summary>
+            Gets the source of the page last loaded by the browser.
+            </summary>
+            <remarks>
+            If the page has been modified after loading (for example, by JavaScript)
+            there is no guarantee that the returned text is that of the modified page.
+            Please consult the documentation of the particular driver being used to
+            determine whether the returned text reflects the current state of the page
+            or the text last sent by the web server. The page source returned is a
+            representation of the underlying DOM: do not expect it to be formatted
+            or escaped in the same way as the response sent from the web server.
+            </remarks>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.QxWebDriver.Title">
+            <summary>Gets the title of the current browser window.</summary>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.QxWebDriver.CurrentWindowHandle">
+            <summary>
+            Gets the current window handle, which is an opaque handle to this
+            window that uniquely identifies it within this driver instance.
+            </summary>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.QxWebDriver.WindowHandles">
+            <summary>Gets the window handles of open browser windows.</summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.Manage">
+            <summary>Instructs the driver to change its settings.</summary>
+            <returns>An <see cref="T:OpenQA.Selenium.IOptions" /> object allowing the user to change
+            the settings of the driver.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.Navigate">
+            <summary>
+            Instructs the driver to navigate the browser to another location.
+            </summary>
+            <returns>An <see cref="T:OpenQA.Selenium.INavigation" /> object allowing the user to access
+            the browser's history and to navigate to a given URL.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.Quit">
+            <summary>Quits this driver, closing every associated window.</summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.SwitchTo">
+            <summary>
+            Instructs the driver to send future commands to a different frame or window.
+            </summary>
+            <returns>An <see cref="T:OpenQA.Selenium.ITargetLocator" /> object which can be used to select
+            a frame or window.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.ExecuteAsyncScript(System.String,System.Object[])">
+            <summary>
+            Executes JavaScript asynchronously in the context of the currently selected frame or window.
+            </summary>
+            <param name="script">The JavaScript code to execute.</param>
+            <param name="args">The arguments to the script.</param>
+            <returns>The value returned by the script.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.ExecuteScript(System.String,System.Object[])">
+            <summary>
+            Executes JavaScript in the context of the currently selected frame or window.
+            </summary>
+            <param name="script">The JavaScript code to execute.</param>
+            <param name="args">The arguments to the script.</param>
+            <returns>The value returned by the script.</returns>
+            <remarks>
+                <para>
+            The <see cref="M:OpenQA.Selenium.IJavaScriptExecutor.ExecuteScript(System.String,System.Object[])" />method executes JavaScript in the context of
+            the currently selected frame or window. This means that "document" will refer
+            to the current document. If the script has a return value, then the following
+            steps will be taken:
+            </para>
+                <para>
+                    <list type="bullet">
+                        <item>
+                            <description>For an HTML element, this method returns a <see cref="T:OpenQA.Selenium.IWebElement" /></description>
+                        </item>
+                        <item>
+                            <description>For a number, a <see cref="T:System.Int64" /> is returned</description>
+                        </item>
+                        <item>
+                            <description>For a boolean, a <see cref="T:System.Boolean" /> is returned</description>
+                        </item>
+                        <item>
+                            <description>For all other cases a <see cref="T:System.String" /> is returned.</description>
+                        </item>
+                        <item>
+                            <description>For an array,we check the first element, and attempt to return a
+            <see cref="T:System.Collections.Generic.List`1" /> of that type, following the rules above. Nested lists are not
+            supported.</description>
+                        </item>
+                        <item>
+                            <description>If the value is null or there is no return value,
+            <see langword="null" /> is returned.</description>
+                        </item>
+                    </list>
+                </para>
+                <para>
+            Arguments must be a number (which will be converted to a <see cref="T:System.Int64" />),
+            a <see cref="T:System.Boolean" />, a <see cref="T:System.String" /> or a <see cref="T:OpenQA.Selenium.IWebElement" />.
+            An exception will be thrown if the arguments do not meet these criteria.
+            The arguments will be made available to the JavaScript via the "arguments" magic
+            variable, as if the function were called via "Function.apply"
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.QxWebDriver.Dispose">
+            <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.Resources.JavaScript">
+            <summary>
+            Handles JavaScript embedded as resource.
+            </summary>
+        </member>
+        <member name="F:Qooxdoo.WebDriver.Resources.JavaScript.Instance">
+            <summary>
+            The default instance
+            </summary>
+        </member>
+        <member name="F:Qooxdoo.WebDriver.Resources.JavaScript.Suffix">
+            <summary>
+            The JavaScript suffix
+            </summary>
+            <remarks>The suffix's default value is empty.</remarks>
+        </member>
+        <member name="F:Qooxdoo.WebDriver.Resources.JavaScript.FileExtension">
+            <summary>
+            The JavaScript file extension
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.Resources.JavaScript.GetValue(System.String)">
+            <summary>
+            Gets the JavaScript content of the resource.
+            </summary>
+            <param name="resourceId">The resource identifier.</param>
+            <returns>The JavaScript content.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.Resources.JavaScript.AddResource(System.String,System.String)">
+            <summary>
+            Adds a JavaScript resource if it doesn't exist in the dictionary.
+            </summary>
+            <param name="resourceId">The resource identifier.</param>
+            <param name="resourcePath">The resource path.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.Resources.JavaScript.AddResourceFromPath(System.String,System.String)">
+            <summary>
+            Adds a JavaScript resource to the dictionary.
+            </summary>
+            <param name="resourceId">The resource identifier.</param>
+            <param name="resourcePath">The resource path.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.Resources.JavaScript.GetResourcePath(System.String)">
+            <summary>
+            Gets the full path of a JavaScript resource.
+            </summary>
+            <param name="resourceId">The resource identifier.</param>
+            <returns>The full path of the resource.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.Resources.JavaScript.ReadResource(System.String)">
+            <summary>
+            Reads a JavaScript resource from the path.
+            </summary>
+            <param name="resourcePath">The resource path.</param>
+            <returns>The raw resource content.</returns>
+            <exception cref="T:System.Exception">Couldn't read resource file.</exception>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.Resources.JavaScript.ManipulateResource(System.String)">
+            <summary>
+            Manipulates the JavaScript resource to get just the useful javascript code.
+            </summary>
+            <param name="resource">The resource.</param>
+            <returns>The useful javascript code.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.Resources.JavaScript.Values">
+            <summary>
+            The list of the <see cref="T:Qooxdoo.WebDriver.Resources.JavaScript"/> instances.
+            </summary>
+            <returns>a list of <see cref="T:Qooxdoo.WebDriver.Resources.JavaScript"/> instances.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.Resources.JavaScript.Ordinal">
+            <summary>
+            Gets the ordinal number of this instance.
+            </summary>
+            <returns>The ordinal number of this instance.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.Resources.JavaScript.ToString">
+            <summary>
+            Gets the name of this instance.
+            </summary>
+            <returns>The name of this instance.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.Resources.JavaScript.ValueOf(System.String)">
+            <summary>
+            The named <see cref="T:Qooxdoo.WebDriver.Resources.JavaScript"/> instance.
+            </summary>
+            <param name="name">The instance name.</param>
+            <returns>The named instance.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.Resources.JavaScriptRunner">
+            <summary>
+            Runs a Javascript script
+            </summary>
+        </member>
+        <member name="F:Qooxdoo.WebDriver.Resources.JavaScriptRunner.Executor">
+            <summary>
+            The Javascript executor
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.Resources.JavaScriptRunner.#ctor(OpenQA.Selenium.IJavaScriptExecutor)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.Resources.JavaScriptRunner"/> class.
+            </summary>
+            <param name="jsExecutor">The js executor.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.Resources.JavaScriptRunner.RunScript(System.String,System.Object[])">
+            <summary>
+            Runs the script.
+            </summary>
+            <param name="scriptId">The script identifier.</param>
+            <param name="args">The arguments.</param>
+            <returns>The value returned by the script.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.Resources.JavaScriptRunner.DefineFunction(System.String)">
+            <summary>
+            Defines a Javascript function
+            </summary>
+            <param name="scriptId">The script identifier.</param>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.Basic.Label">
+            <summary>
+            Label widget
+            </summary>
+            <seealso cref="T:Qooxdoo.WebDriver.UI.Core.WidgetImpl" />
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Basic.Label.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.Basic.Label"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="webDriver">The web driver.</param>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Basic.Label.Value">
+            <summary>
+            Gets the string representation of a Label's value </summary>
+            <returns>The label string.</returns>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.Core.Scroll.AbstractScrollArea">
+            <summary>
+            Represents a <a href="http://demo.qooxdoo.org/current/apiviewer/#qx.ui.core.Scroll.AbstractScrollArea">ScrollArea</a>
+            widget
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.Scroll.AbstractScrollArea.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.Core.Scroll.AbstractScrollArea"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="webDriver">The web driver.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.Scroll.AbstractScrollArea.GetScrollbar(System.String)">
+            <summary>
+            Gets the Scrollbar widget.
+            </summary>
+            <param name="direction">The scrollbar direction.</param>
+            <returns>The scroll bar.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.Scroll.AbstractScrollArea.ScrollTo(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Scrolls the widget to a given position
+            </summary>
+            <param name="direction"> "x" or "y" for horizontal/vertical scrolling </param>
+            <param name="position"> Position (in pixels) to scroll to </param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.Scroll.AbstractScrollArea.GetScrollPosition(System.String)">
+            <summary>
+            Returns the current scroll position of the widget
+            </summary>
+            <param name="direction"> "x" or "y" for horizontal/vertical position </param>
+            <returns>The scroll position in pixels.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.Scroll.AbstractScrollArea.GetScrollPosition(Qooxdoo.WebDriver.UI.IWidget)">
+            <summary>
+            Gets the scroll position.
+            </summary>
+            <param name="scrollBar">The scroll bar.</param>
+            <returns>The scroll position in pixels.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.Scroll.AbstractScrollArea.GetScrollStep(Qooxdoo.WebDriver.UI.IWidget)">
+            <summary>
+            Gets the scroll step.
+            </summary>
+            <param name="scrollBar">The scroll bar.</param>
+            <returns>The scroll step in pixels.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.Scroll.AbstractScrollArea.GetScrollStep(System.String)">
+            <summary>
+            Gets the scroll step.
+            </summary>
+            <param name="direction">The direction.</param>
+            <returns>The scroll step in pixels.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.Scroll.AbstractScrollArea.GetMaximum(System.String)">
+            <summary>
+            Returns the maximum scroll position of the widget
+            </summary>
+            <param name="direction"> "x" or "y" for horizontal/vertical maximum </param>
+            <returns>The maximum scroll position in pixels.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.Scroll.AbstractScrollArea.GetMaximum(Qooxdoo.WebDriver.UI.IWidget)">
+            <summary>
+            Returns the maximum scroll position of the widget
+            </summary>
+            <param name="scrollBar">The scroll bar.</param>
+            <returns>The maximum scroll position in pixels.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.Scroll.AbstractScrollArea.ScrollToChild(System.String,OpenQA.Selenium.By)">
+            <summary>
+            Scrolls the area in the given direction until the locator finds a child
+            widget. The locator will be executed in the scroll area's context, so
+            a relative locator should be used, e.g. <code>By.Qxh("*\/[@label=Foo]")</code>
+            </summary>
+            <param name="direction"> "x" or "y" for horizontal/vertical scrolling </param>
+            <param name="locator"> Child widget locator </param>
+            <returns>The matching child widget.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.Scroll.AbstractScrollArea.IsChildInView(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Determines whether the child is visible.
+            </summary>
+            <param name="child">The child.</param>
+            <returns><value>true</value> if the child is visible; otherwise <value>false</value>.</returns>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.Core.Scroll.ScrollPane">
+            <summary>
+            ScrollPane widget
+            </summary>
+            <seealso cref="T:Qooxdoo.WebDriver.UI.Core.Scroll.AbstractScrollArea" />
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.Scroll.ScrollPane.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.Core.Scroll.ScrollPane"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="webDriver">The web driver.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.Scroll.ScrollPane.ScrollTo(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Scrolls the widget to a given position
+            </summary>
+            <param name="direction"> "x" or "y" for horizontal/vertical scrolling </param>
+            <param name="position"> Position (in pixels) to scroll to </param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.Scroll.ScrollPane.GetMaximum(System.String)">
+            <summary>
+            Returns the maximum scroll position of the widget
+            </summary>
+            <param name="direction"> "x" or "y" for horizontal/vertical maximum </param>
+            <returns>The maximum scroll position in pixels.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.Scroll.ScrollPane.GetScrollPosition(System.String)">
+            <summary>
+            Returns the current scroll position of the widget
+            </summary>
+            <param name="direction"> "x" or "y" for horizontal/vertical position </param>
+            <returns>The scroll position in pixels.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.Scroll.ScrollPane.GetScrollStep(System.String)">
+            <summary>
+            Gets the scroll step.
+            </summary>
+            <param name="direction">The direction.</param>
+            <returns>The scroll step in pixels.</returns>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.Core.WidgetImpl">
+            <summary>
+            Base widget implementation
+            </summary>
+            <seealso cref="T:Qooxdoo.WebDriver.UI.IWidget" />
+        </member>
+        <member name="F:Qooxdoo.WebDriver.UI.Core.WidgetImpl.Driver">
+            <summary>
+            The driver
+            </summary>
+        </member>
+        <member name="F:Qooxdoo.WebDriver.UI.Core.WidgetImpl.JsExecutor">
+            <summary>
+            The js executor
+            </summary>
+        </member>
+        <member name="F:Qooxdoo.WebDriver.UI.Core.WidgetImpl.JsRunner">
+            <summary>
+            The js runner
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.Core.WidgetImpl"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="webDriver">The web driver.</param>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Core.WidgetImpl.QxHash">
+            <summary>
+            Gets this widget's qooxdoo object registry ID
+            </summary>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Core.WidgetImpl.Classname">
+            <summary>
+            Gets this widget's qooxdoo class name
+            </summary>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Core.WidgetImpl.ContentElement">
+            <summary>
+            Gets the IWebElement representing this widget's content element
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.DragToWidget(Qooxdoo.WebDriver.UI.IWidget)">
+            <summary>
+            Drag and drop this widget onto another widget
+            </summary>
+            <param name="target">The target.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.DragOver(Qooxdoo.WebDriver.UI.IWidget)">
+            <summary>
+            Drag over this widget to another widget
+            </summary>
+            <param name="target">The target.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.Drop(Qooxdoo.WebDriver.UI.IWidget)">
+            <summary>
+            Drag and drop this widget onto another widget
+            </summary>
+            <param name="target">The target.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.Click">
+            <summary>Clicks this element.</summary>
+            <remarks>
+                <para>
+            Click this element. If the click causes a new page to load, the <see cref="M:OpenQA.Selenium.IWebElement.Click" />
+            method will attempt to block until the page has loaded. After calling the
+            <see cref="M:OpenQA.Selenium.IWebElement.Click" /> method, you should discard all references to this
+            element unless you know that the element and the page will still be present.
+            Otherwise, any further operations performed on this element will have an undefined.
+            behavior.
+            </para>
+                <para>
+            If this element is not clickable, then this operation is ignored. This allows you to
+            simulate a users to accidentally missing the target when clicking.
+            </para>
+            </remarks>
+            <exception cref="T:OpenQA.Selenium.ElementNotVisibleException">Thrown when the target element is not visible.</exception>
+            <exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.SendKeys(System.String)">
+            <summary>Simulates typing text into the element.</summary>
+            <param name="text">The text to type into the element.</param>
+            <remarks>The text to be typed may include special characters like arrow keys,
+            backspaces, function keys, and so on. Valid special keys are defined in
+            <see cref="T:OpenQA.Selenium.Keys" />.</remarks>
+            <seealso cref="T:OpenQA.Selenium.Keys" />
+            <exception cref="T:OpenQA.Selenium.InvalidElementStateException">Thrown when the target element is not enabled.</exception>
+            <exception cref="T:OpenQA.Selenium.ElementNotVisibleException">Thrown when the target element is not visible.</exception>
+            <exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.WaitForChildControl(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Repeatedly checks if the child control with the given id is visible.
+            Returns the child control if successful.
+            </summary>
+            <param name="childControlId">The child control identifier.</param>
+            <param name="timeoutInSeconds">The time to wait for the child control in seconds.</param>
+            <returns>The matching child widget.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.ChildControlIsVisible(System.String)">
+            <summary>
+            A condition that waits until a child control has been rendered, then returns it.
+            </summary>
+            <param name="childControlId">The child control identifier.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.GetChildControl(System.String)">
+             <summary>
+             Returns a <seealso cref="T:Qooxdoo.WebDriver.UI.IWidget" /> representing a child control of this widget.
+             </summary>
+             <param name="childControlId">The child control identifier.</param>
+             <returns>
+             The matching child widget or <c>null</c> if the child control doesn't exist.
+            .</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.HasChildControl(System.String)">
+             <summary>
+             Determines whether [has child control] [the specified child control identifier].
+             </summary>
+             <param name="childControlId">The child control identifier.</param>
+             <returns>
+               <value>true</value> if the widget has a child control; otherwise <value>false</value>
+            .</returns>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Core.WidgetImpl.LayoutParent">
+            <summary>
+            Gets a <seealso cref="T:Qooxdoo.WebDriver.UI.IWidget" /> representing the layout parent.
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.ExecuteJavascript(System.String)">
+             <summary>
+             Calls IJavaScriptExecutor.ExecuteScript. The first argument is the widget's
+             content element.
+             </summary>
+             <param name="script">The script to execute.</param>
+             <returns>
+             The value returned by the execution.
+            .</returns>
+             <seealso cref="T:OpenQA.Selenium.IJavaScriptExecutor" />
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.GetPropertyValueAsJson(System.String)">
+             <summary>
+             Returns the value of a qooxdoo property on this widget, serialized in JSON
+             format.
+             <strong>NOTE:</strong> Never use this for property values that are instances
+             of qx.core.Object. Circular references in qooxoo's OO system will lead to
+             JavaScript errors.
+             </summary>
+             <param name="propertyName">Name of the property.</param>
+             <returns>
+             The property value as JSON string.
+            .</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.GetPropertyValue(System.String)">
+             <summary>
+             Returns the value of a qooxdoo property on this widget. See the <seealso cref="T:OpenQA.Selenium.IJavaScriptExecutor" />
+             documentation for details on how JavaScript types are represented.
+             <strong>NOTE:</strong> Never use this for property values that are instances
+             of qx.core.Object. Circular references in qooxoo's OO system will lead to
+             JavaScript errors.
+             </summary>
+             <param name="propertyName">Name of the property.</param>
+             <returns>
+             The property value.
+            .</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.GetWidgetFromProperty(System.String)">
+             <summary>
+             Returns a <seealso cref="T:Qooxdoo.WebDriver.UI.IWidget" /> representing the value of a widget property,
+             e.g. <a href="http://demo.qooxdoo.org/current/apiviewer/#qx.ui.form.MenuButton~menu!property">the
+             MenuButton's menu property</a>
+             </summary>
+             <param name="propertyName">Name of the property.</param>
+             <returns>
+             The <seealso cref="T:Qooxdoo.WebDriver.UI.IWidget" /> property value.
+            .</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.GetWidgetListFromProperty(System.String)">
+             <summary>
+             Returns a List of <seealso cref="T:Qooxdoo.WebDriver.UI.IWidget" />s representing the value of a widget list property,
+             e.g. <a href="http://demo.qooxdoo.org/current/apiviewer/#qx.ui.core.MMultiSelectionHandling~getSelection">MMultiSelectionHandling.getSelection</a>
+             </summary>
+             <param name="propertyName">Name of the property.</param>
+             <returns>
+             The List of <seealso cref="T:Qooxdoo.WebDriver.UI.IWidget" />s property value.
+            .</returns>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Core.WidgetImpl.Children">
+            <summary>
+            Gets a list of <seealso cref="T:Qooxdoo.WebDriver.UI.IWidget" /> objects representing this widget's children
+            as defined using <a href="http://demo.qooxdoo.org/current/apiviewer/#qx.ui.core.MChildrenHandling~add!method_public">parent.add(child);</a> in the application code.
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.IsRendered(OpenQA.Selenium.IWebElement,OpenQA.Selenium.By)">
+            <summary>
+            A condition that checks if an element is rendered.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="by">The locating mechanism to use.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.FindElement(OpenQA.Selenium.By)">
+            <summary>
+            Finds the first <see cref="T:OpenQA.Selenium.IWebElement" /> using the given method.
+            </summary>
+            <param name="by">The locating mechanism to use.</param>
+            <returns>The first matching <see cref="T:OpenQA.Selenium.IWebElement" /> on the current context.</returns>
+            <exception cref="T:OpenQA.Selenium.NoSuchElementException">If no element matches the criteria.</exception>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.FindWidget(OpenQA.Selenium.By)">
+            <summary>
+            Finds a widget relative to the current one by traversing the qooxdoo
+            widget hierarchy.
+            </summary>
+            <param name="by">The locating mechanism to use.</param>
+            <returns>The found widget.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.WaitForWidget(OpenQA.Selenium.By,System.Int64)">
+            <summary>
+            Finds a widget relative to the current one by traversing the qooxdoo
+            widget hierarchy.
+            </summary>
+            <param name="by">The locating mechanism to use.</param>
+            <param name="timeoutInSeconds">The time to wait for the widget in seconds.</param>
+            <returns>The matching widget.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.ToString">
+            <summary>Returns a string that represents the current object.</summary>
+            <returns>A string that represents the current object.</returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.Submit">
+            <summary>
+            Not implemented for qooxdoo widgets.
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.Clear">
+            <summary>Clears the content of this element.</summary>
+            <remarks>If this element is a text entry element, the <see cref="M:OpenQA.Selenium.IWebElement.Clear" />
+            method will clear the value. It has no effect on other elements. Text entry elements
+            are defined as elements with INPUT or TEXTAREA tags.</remarks>
+            <exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Core.WidgetImpl.TagName">
+            <summary>Gets the tag name of this element.</summary>
+            <remarks>
+            The <see cref="P:OpenQA.Selenium.IWebElement.TagName" /> property returns the tag name of the
+            element, not the value of the name attribute. For example, it will return
+            "input" for an element specified by the HTML markup &lt;input name="foo" /&gt;.
+            </remarks>
+            <exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.GetAttribute(System.String)">
+            <summary>
+            Gets the value of the specified attribute for this element.
+            </summary>
+            <param name="attributeName">The name of the attribute.</param>
+            <returns>The attribute's current value. Returns a <see langword="null" /> if the
+            value is not set.</returns>
+            <remarks>The <see cref="M:OpenQA.Selenium.IWebElement.GetAttribute(System.String)" /> method will return the current value
+            of the attribute, even if the value has been modified after the page has been
+            loaded. Note that the value of the following attributes will be returned even if
+            there is no explicit attribute on the element:
+            <list type="table"><listheader><term>Attribute name</term><term>Value returned if not explicitly specified</term><term>Valid element types</term></listheader><item><description>checked</description><description>checked</description><description>Check Box</description></item><item><description>selected</description><description>selected</description><description>Options in Select elements</description></item><item><description>disabled</description><description>disabled</description><description>Input and other UI elements</description></item></list></remarks>
+            <exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.GetProperty(System.String)">
+            <summary>
+            Gets the value of a JavaScript property of this element.
+            </summary>
+            <param name="propertyName">The name JavaScript the JavaScript property to get the value of.</param>
+            <returns>The JavaScript property's current value. Returns a <see langword="null" /> if the
+            value is not set or the property does not exist.</returns>
+            <exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Core.WidgetImpl.Selected">
+            <summary>
+            Gets a value indicating whether or not this element is selected.
+            </summary>
+            <remarks>This operation only applies to input elements such as checkboxes,
+            options in a select element and radio buttons.</remarks>
+            <exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Core.WidgetImpl.Enabled">
+            <summary>
+            Gets a value indicating whether or not this element is enabled.
+            </summary>
+            <remarks>The <see cref="P:OpenQA.Selenium.IWebElement.Enabled" /> property will generally
+            return <see langword="true" /> for everything except explicitly disabled input elements.</remarks>
+            <exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Core.WidgetImpl.Text">
+            <summary>
+            Gets the innerText of this element, without any leading or trailing whitespace,
+            and with other whitespace collapsed.
+            </summary>
+            <exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.FindElements(OpenQA.Selenium.By)">
+            <summary>
+            Finds all <see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> within the current context
+            using the given mechanism.
+            </summary>
+            <param name="by">The locating mechanism to use.</param>
+            <returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> of all <see cref="T:OpenQA.Selenium.IWebElement">WebElements</see>
+            matching the current criteria, or an empty list if nothing matches.</returns>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Core.WidgetImpl.Displayed">
+            <summary>
+            Determines if the widget is visible by querying the qooxdoo property
+            <a href="http://demo.qooxdoo.org/current/apiviewer/#qx.ui.core.IWidget~isSeeable!method_public">seeable</a>.
+            </summary>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Core.WidgetImpl.Location">
+            <summary>
+            Gets a <see cref="T:System.Drawing.Point" /> object containing the coordinates of the upper-left corner
+            of this element relative to the upper-left corner of the page.
+            </summary>
+            <exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Core.WidgetImpl.Size">
+            <summary>
+            Gets a <see cref="P:OpenQA.Selenium.IWebElement.Size" /> object containing the height and width of this element.
+            </summary>
+            <exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Core.WidgetImpl.GetCssValue(System.String)">
+            <summary>Gets the value of a CSS property of this element.</summary>
+            <param name="propertyName">The name of the CSS property to get the value of.</param>
+            <returns>The value of the specified CSS property.</returns>
+            <remarks>The value returned by the <see cref="M:OpenQA.Selenium.IWebElement.GetCssValue(System.String)" />
+            method is likely to be unpredictable in a cross-browser environment.
+            Color values should be returned as hex strings. For example, a
+            "background-color" property set as "green" in the HTML source, will
+            return "#008000" for its value.</remarks>
+            <exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.DefaultWidgetFactory">
+            <summary>
+            The default widget factory
+            </summary>
+            <seealso cref="T:Qooxdoo.WebDriver.UI.IWidgetFactory" />
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.DefaultWidgetFactory.#ctor(Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.DefaultWidgetFactory"/> class.
+            </summary>
+            <param name="qxWebDriver">The wrapper QxWebDriver.</param>
+        </member>
+        <member name="F:Qooxdoo.WebDriver.UI.DefaultWidgetFactory.Driver">
+            <summary>
+            The driver
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.DefaultWidgetFactory.GetWidgetInterfaces(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Returns a list of qooxdoo interfaces implemented by the widget containing
+            the given element.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.DefaultWidgetFactory.GetWidgetInheritance(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Returns the inheritance hierarchy of the widget containing the given element.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.DefaultWidgetFactory.GetWidgetForElement(OpenQA.Selenium.IWebElement)">
+             <summary>
+             Returns an instance of <seealso cref="T:Qooxdoo.WebDriver.UI.IWidget" /> or one of its subclasses that
+             represents the qooxdoo widget containing the given element.
+             </summary>
+             <param name="element">A IWebElement representing a DOM element
+             that is part of a qooxdoo widget</param>
+             <returns>
+             The wWidget object
+            .</returns>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.Form.ComboBox">
+            <summary>
+            Represents a <a href="http://demo.qooxdoo.org/current/apiviewer/#qx.ui.form.ComboBox">ComboBox</a>
+            widget
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Form.ComboBox.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.Form.ComboBox"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="webDriver">The web driver.</param>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Form.ComboBox.Button">
+            <summary>
+            Gets the button.
+            </summary>
+            <value>
+            The button.
+            </value>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Form.ComboBox.Clear">
+            <summary>
+            Clears the content of this element.
+            </summary>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.Form.BooleanForm">
+            <summary>
+            Boolena form widget
+            </summary>
+            <seealso cref="T:Qooxdoo.WebDriver.UI.Core.WidgetImpl" />
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Form.BooleanForm.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.Form.BooleanForm"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="webDriver">The web driver.</param>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Form.BooleanForm.Selected">
+            <summary>Gets a value indicating whether or not this element is selected. </summary>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.Form.List">
+            <summary>
+            Represents a <a href="http://demo.qooxdoo.org/current/apiviewer/#qx.ui.form.List">List</a>
+            widget
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Form.List.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.Form.List"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="webDriver">The web driver.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Form.List.GetSelectableItem(System.Nullable{System.Int32})">
+            <summary>
+            Finds a selectable child widget by index and returns it
+            </summary>
+            <param name="index">The index of the item.</param>
+            <returns>The found item.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Form.List.SelectItem(System.Nullable{System.Int32})">
+            <summary>
+            Finds a selectable child widget by index and selects it
+            </summary>
+            <param name="index">The index of the item.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Form.List.GetSelectableItem(System.String)">
+            <summary>
+            Finds the first selectable child widget with a matching label and returns it
+            </summary>
+            <param name="label">The label to match.</param>
+            <returns>The matching item.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Form.List.SelectItem(System.String)">
+            <summary>
+            Finds the first selectable child widget with a label matching the regular
+            expression and selects it
+            </summary>
+            <param name="regex">The regular expreesion to match.</param>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.Form.MenuButton">
+            <summary>
+            MenuButton widget
+            </summary>
+            <seealso cref="T:Qooxdoo.WebDriver.UI.Form.SelectBox" />
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Form.MenuButton.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.Form.MenuButton"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="driver">The driver.</param>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Form.MenuButton.List">
+            <summary>
+            Gets or sets the list.
+            </summary>
+            <value>
+            The list.
+            </value>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Form.MenuButton.Button">
+            <summary>
+            Gets the button.
+            </summary>
+            <value>
+            The button.
+            </value>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.Form.SelectBox">
+            <summary>
+            Represents a <a href="http://demo.qooxdoo.org/current/apiviewer/#qx.ui.form.SelectBox">SelectBox</a>
+            widget
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Form.SelectBox.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.Form.SelectBox"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="driver">The driver.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Form.SelectBox.GetSelectableItem(System.Nullable{System.Int32})">
+            <summary>
+            Finds a selectable child widget by index and returns it
+            </summary>
+            <param name="index">The index of the item.</param>
+            <returns>The found item.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Form.SelectBox.SelectItem(System.Nullable{System.Int32})">
+            <summary>
+            Finds a selectable child widget by index and selects it
+            </summary>
+            <param name="index">The index of the item.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Form.SelectBox.GetSelectableItem(System.String)">
+            <summary>
+            Finds the first selectable child widget with a label matching the regular
+            expression and returns it
+            </summary>
+            <param name="regex">The regular expreesion to match.</param>
+            <returns>The found item.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Form.SelectBox.SelectItem(System.String)">
+            <summary>
+            Finds the first selectable child widget with a label matching the regular
+            expression and selects it
+            </summary>
+            <param name="regex">The regular expreesion to match.</param>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Form.SelectBox.Button">
+            <summary>
+            Gets the button.
+            </summary>
+            <value>
+            The button.
+            </value>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Form.SelectBox.List">
+            <summary>
+            Gets the list.
+            </summary>
+            <value>
+            The list.
+            </value>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.Form.VirtualComboBox">
+            <summary>
+            Virtual combobox widget
+            </summary>
+            <seealso cref="T:Qooxdoo.WebDriver.UI.Form.ComboBox" />
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Form.VirtualComboBox.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.Form.VirtualComboBox"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="webDriver">The web driver.</param>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Form.VirtualComboBox.List">
+            <summary>
+            Gets the list.
+            </summary>
+            <value>
+            The list.
+            </value>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.Form.VirtualSelectBox">
+            <summary>
+            Represents a <a href="http://demo.qooxdoo.org/current/apiviewer/#qx.ui.form.VirtualSelectBox">VirtualSelectBox</a>
+            widget
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Form.VirtualSelectBox.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.Form.VirtualSelectBox"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="driver">The driver.</param>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Form.VirtualSelectBox.List">
+            <summary>
+            Gets the list.
+            </summary>
+            <value>
+            The list.
+            </value>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.List.List">
+            <summary>
+            Represents a <a href="http://demo.qooxdoo.org/current/apiviewer/#qx.ui.list.List">List</a>
+            widget
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.List.List.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.List.List"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="webDriver">The web driver.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.List.List.GetSelectableItem(System.Nullable{System.Int32})">
+            <summary>
+            Finds a selectable child widget by index and returns it
+            </summary>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.Menu.Menu">
+            <summary>
+            Represents a <a href="http://demo.qooxdoo.org/current/apiviewer/#qx.ui.menu.Menu">Menu</a>
+            widget
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Menu.Menu.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.Menu.Menu"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="webDriver">The web driver.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Menu.Menu.SelectItem(System.Nullable{System.Int32})">
+            <summary>
+            Finds a selectable child widget by index and selects it
+            </summary>
+            <param name="index">The index of the item.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Menu.Menu.SelectItem(System.String)">
+            <summary>
+            Finds the first selectable child widget with a label matching the regular
+            expression and selects it
+            </summary>
+            <param name="regex">The regular expreesion to match.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Menu.Menu.GetSelectableItem(System.Nullable{System.Int32})">
+            <summary>
+            Finds a selectable child widget by index and returns it
+            </summary>
+            <param name="index">The index of the item.</param>
+            <returns>The found item.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Menu.Menu.GetSelectableItem(System.String)">
+            <summary>
+            Finds the first selectable child widget with a matching label and returns it
+            </summary>
+            <param name="label">The label to search for.</param>
+            <returns>The matching item.</returns>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Menu.Menu.ScrollPane">
+            <summary>
+            Gets the scroll pane.
+            </summary>
+            <value>
+            The scroll pane.
+            </value>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Menu.Menu.ScrollTo(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Scrolls the widget to a given position
+            </summary>
+            <param name="direction"> "x" or "y" for horizontal/vertical scrolling </param>
+            <param name="position"> Position (in pixels) to scroll to </param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Menu.Menu.ScrollToChild(System.String,OpenQA.Selenium.By)">
+            <summary>
+            Scrolls the area in the given direction until the locator finds a child
+            widget. The locator will be executed in the scroll area's context, so
+            a relative locator should be used, e.g. <code>By.Qxh("*\/[@label=Foo]")</code>
+            </summary>
+            <param name="direction"> "x" or "y" for horizontal/vertical scrolling </param>
+            <param name="locator"> Child widget locator </param>
+            <returns>The matching child widget.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Menu.Menu.GetMaximum(System.String)">
+            <summary>
+            Returns the maximum scroll position of the widget
+            </summary>
+            <param name="direction"> "x" or "y" for horizontal/vertical maximum </param>
+            <returns>The maximum scroll position in pixels.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Menu.Menu.GetScrollPosition(System.String)">
+            <summary>
+            Returns the current scroll position of the widget
+            </summary>
+            <param name="direction"> "x" or "y" for horizontal/vertical position </param>
+            <returns>The scroll position in pixels.</returns>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.Mobile.Core.WidgetImpl">
+            <summary>
+            Base mobile widget implementation
+            </summary>
+            <seealso cref="T:Qooxdoo.WebDriver.UI.Core.WidgetImpl" />
+            <seealso cref="T:Qooxdoo.WebDriver.UI.ITouchable" />
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Mobile.Core.WidgetImpl.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.Mobile.Core.WidgetImpl"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="webDriver">The web driver.</param>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Mobile.Core.WidgetImpl.Displayed">
+            <summary>
+            Determines if the widget is visible by querying the qooxdoo property
+            <a href="http://demo.qooxdoo.org/current/apiviewer/#qx.ui.core.IWidget~isSeeable!method_public">seeable</a>.
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Mobile.Core.WidgetImpl.Tap">
+            <summary>
+            Performs a single tap on this widget.
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Mobile.Core.WidgetImpl.Tap(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.IWebElement)">
+            <summary>
+            Performs a single tap on the element of the specified driver.
+            </summary>
+            <param name="driver">The driver.</param>
+            <param name="element">The element.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Mobile.Core.WidgetImpl.Longtap">
+            <summary>
+            Performs a long tap on this widget.
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Mobile.Core.WidgetImpl.Longtap(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.IWebElement)">
+            <summary>
+            Performs a long tap on the element of the specified driver.
+            </summary>
+            <param name="driver">The driver to use.</param>
+            <param name="element">The element to long tap.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Mobile.Core.WidgetImpl.GetCenter(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Gets the center of a given element.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>The center of the element.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Mobile.Core.WidgetImpl.Track(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Tracks this widget by the given offsets
+            </summary>
+            <param name="x">Amount of pixels to move horizontally</param>
+            <param name="y">Amount of pixels to move vertically</param>
+            <param name="step">Generate a move event every (step) pixels</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Mobile.Core.WidgetImpl.Track(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.IWebElement,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Tracks the element of the specified driver by the given offsets
+            </summary>
+            <param name="driver">The driver to use.</param>
+            <param name="element">The element to track.</param>
+            <param name="x">Amount of pixels to move horizontally</param>
+            <param name="y">Amount of pixels to move vertically</param>
+            <param name="step">Generate a move event every (step) pixels</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Mobile.Core.WidgetImpl.ScrollTo(System.Int32,System.Int32)">
+            <summary>
+            Scrolls the widget to a given position
+            </summary>
+            <param name="x">The x position (in pixels) to scroll to </param>
+            <param name="y">The y position (in pixels) to scroll to </param>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.Mobile.Form.Slider">
+            <summary>
+            Mobile sloder widget
+            </summary>
+            <seealso cref="T:Qooxdoo.WebDriver.UI.Mobile.Core.WidgetImpl" />
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Mobile.Form.Slider.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.Mobile.Form.Slider"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="webDriver">The web driver.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Mobile.Form.Slider.Track(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Drags this widget by the given offsets </summary>
+            <param name="x"> Amount of pixels to move horizontally </param>
+            <param name="y"> Amount of pixels to move vertically </param>
+            <param name="step"> Generate a move event every (step) pixels </param>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.Mobile.List.List">
+            <summary>
+            Mobile list widget
+            </summary>
+            <seealso cref="T:Qooxdoo.WebDriver.UI.Mobile.Core.WidgetImpl" />
+            <seealso cref="T:Qooxdoo.WebDriver.UI.Mobile.ISelectable" />
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Mobile.List.List.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.Mobile.List.List"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="webDriver">The web driver.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Mobile.List.List.GetSelectableItem(System.Nullable{System.Int32})">
+            <summary>
+            Gets the selectable item.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>The found item.</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Mobile.List.List.SelectItem(System.Nullable{System.Int32})">
+            <summary>
+            Locates a list item by its position and taps it. </summary>
+            <param name="index"> The list item's index </param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Mobile.List.List.GetSelectableItem(System.String)">
+            <summary>
+            Gets the selectable item.
+            </summary>
+            <param name="regex">The regular expreesion to match.</param>
+            <returns>The found item.</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Mobile.List.List.SelectItem(System.String)">
+            <summary>
+            Locates a list item by its title (exact match) and taps it. </summary>
+            <param name="title"> The list item's title text </param>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.Mobile.ISelectable">
+            <summary>
+            This interface represents qx.Mobile widgets with selectable child items, e.g.
+            qx.ui.mobile.list.List. For qx.Desktop widgets, please use
+            Qooxdoo.WebDriver.UI.ISelectable instead.
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Mobile.ISelectable.SelectItem(System.String)">
+            <summary>
+            Locates a list item by its title (exact match) and taps it. </summary>
+            <param name="title"> The list item's title text </param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Mobile.ISelectable.SelectItem(System.Nullable{System.Int32})">
+            <summary>
+            Locates a list item by its position and taps it. </summary>
+            <param name="index"> The list item's index </param>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.IScrollable">
+            <summary>
+            Scrollable interface
+            </summary>
+            <seealso cref="T:Qooxdoo.WebDriver.UI.IWidget" />
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.IScrollable.ScrollTo(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Scrolls the widget to a given position
+            </summary>
+            <param name="direction"> "x" or "y" for horizontal/vertical scrolling </param>
+            <param name="position"> Position (in pixels) to scroll to </param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.IScrollable.ScrollToChild(System.String,OpenQA.Selenium.By)">
+            <summary>
+            Scrolls the area in the given direction until the locator finds a child
+            widget. The locator will be executed in the scroll area's context, so
+            a relative locator should be used, e.g. <code>By.Qxh("*\/[@label=Foo]")</code>
+            </summary>
+            <param name="direction"> "x" or "y" for horizontal/vertical scrolling </param>
+            <param name="locator"> Child widget locator </param>
+            <returns>The matching child widget.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.IScrollable.GetMaximum(System.String)">
+            <summary>
+            Returns the maximum scroll position of the widget
+            </summary>
+            <param name="direction"> "x" or "y" for horizontal/vertical maximum </param>
+            <returns>The maximum scroll position in pixels.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.IScrollable.GetScrollPosition(System.String)">
+            <summary>
+            Returns the current scroll position of the widget
+            </summary>
+            <param name="direction"> "x" or "y" for horizontal/vertical position </param>
+            <returns>The scroll position in pixels.</returns>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.ISelectable">
+            <summary>
+            Represents a widget that allows the user to select one or more out of
+            several items that are displayed as widgets. Only works with qx.Desktop widgets,
+            for qx.Mobile please use Qooxdoo.WebDriver.UI.Mobile.ISelectable instead.
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.ISelectable.GetSelectableItem(System.Nullable{System.Int32})">
+            <summary>
+            Finds a selectable child widget by index and returns it
+            </summary>
+            <param name="index">The index of the item.</param>
+            <returns>The found item.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.ISelectable.SelectItem(System.Nullable{System.Int32})">
+            <summary>
+            Finds a selectable child widget by index and selects it
+            </summary>
+            <param name="index">The index of the item.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.ISelectable.GetSelectableItem(System.String)">
+            <summary>
+            Finds the first selectable child widget with a label matching the regular
+            expression and returns it
+            </summary>
+            <param name="regex">The regular expreesion to match.</param>
+            <returns>The matching item.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.ISelectable.SelectItem(System.String)">
+            <summary>
+            Finds the first selectable child widget with a label matching the regular
+            expression and selects it
+            </summary>
+            <param name="regex">The regular expreesion to match.</param>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.Table.ColumnMenu.Button">
+            <summary>
+            Button widget
+            </summary>
+            <seealso cref="T:Qooxdoo.WebDriver.UI.Form.MenuButton" />
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.ColumnMenu.Button.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.Table.ColumnMenu.Button"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="driver">The driver.</param>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.Table.Pane.Scroller">
+            <summary>
+            Scroller widget
+            </summary>
+            <seealso cref="T:Qooxdoo.WebDriver.UI.Core.Scroll.AbstractScrollArea" />
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.Pane.Scroller.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.Table.Pane.Scroller"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="webDriver">The web driver.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.Pane.Scroller.ScrollTo(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Scrolls the widget to a given position
+            </summary>
+            <param name="direction"> "x" or "y" for horizontal/vertical scrolling </param>
+            <param name="position"> Position (in pixels) to scroll to </param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.Pane.Scroller.GetMaximum(System.String)">
+            <summary>
+            Returns the maximum scroll position of the widget
+            </summary>
+            <param name="direction"> "x" or "y" for horizontal/vertical maximum </param>
+            <returns>The maximum scroll position in pixels.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.Pane.Scroller.GetScrollPosition(System.String)">
+            <summary>
+            Returns the current scroll position of the widget
+            </summary>
+            <param name="direction"> "x" or "y" for horizontal/vertical position </param>
+            <returns>scroll position in pixels.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.Pane.Scroller.GetScrollStep(System.String)">
+            <summary>
+            Gets the scroll step.
+            </summary>
+            <param name="direction">The direction.</param>
+            <returns>The scroll step.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.Pane.Scroller.GetVisibleRow(System.Nullable{System.Int32})">
+            <summary>
+            Gets the visible row.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>The target row.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.Pane.Scroller.ScrollToRow(System.Nullable{System.Int32})">
+            <summary>
+            Scrolls to row.
+            </summary>
+            <param name="rowIndex">Index of the row.</param>
+            <returns>The target row.</returns>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Table.Pane.Scroller.FirstVisibleRow">
+            <summary>
+            Gets the first visible row.
+            </summary>
+            <value>
+            The first visible row.
+            </value>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Table.Pane.Scroller.VisibleRowCount">
+            <summary>
+            Gets the visible row count.
+            </summary>
+            <value>
+            The visible row count.
+            </value>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.Table.Table">
+            <summary>
+            Table widget
+            </summary>
+            <seealso cref="T:Qooxdoo.WebDriver.UI.Core.WidgetImpl" />
+            <seealso cref="T:Qooxdoo.WebDriver.UI.IScrollable" />
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.Table.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.Table.Table"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="webDriver">The web driver.</param>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Table.Table.HeaderLabels">
+            <summary>
+            Gets the header labels.
+            </summary>
+            <value>
+            The header labels.
+            </value>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Table.Table.HeaderCells">
+            <summary>
+            Gets the header cells.
+            </summary>
+            <value>
+            The header cells.
+            </value>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.Table.GetHeaderCell(System.String)">
+            <summary>
+            Gets the header cell.
+            </summary>
+            <param name="label">The label.</param>
+            <returns>The found header cell.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.Table.GetHeaderCell(System.Int32)">
+            <summary>
+            Gets the header cell.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>The found header cell.</returns>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Table.Table.ColumnMenuButton">
+            <summary>
+            Gets the column menu button.
+            </summary>
+            <value>
+            The column menu button.
+            </value>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Table.Table.Scroller">
+            <summary>
+            Gets the scroller.
+            </summary>
+            <value>
+            The scroller.
+            </value>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.Table.ScrollTo(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Scrolls the widget to a given position
+            </summary>
+            <param name="direction"> "x" or "y" for horizontal/vertical scrolling </param>
+            <param name="position"> Position (in pixels) to scroll to </param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.Table.ScrollToChild(System.String,OpenQA.Selenium.By)">
+            <summary>
+            Scrolls the area in the given direction until the locator finds a child
+            widget. The locator will be executed in the scroll area's context, so
+            a relative locator should be used, e.g. <code>By.Qxh("*\/[@label=Foo]")</code>
+            </summary>
+            <param name="direction"> "x" or "y" for horizontal/vertical scrolling </param>
+            <param name="locator"> Child widget locator </param>
+            <returns>The matching child widget.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.Table.GetMaximum(System.String)">
+            <summary>
+            Returns the maximum scroll position of the widget
+            </summary>
+            <param name="direction"> "x" or "y" for horizontal/vertical maximum </param>
+            <returns>The maximum scroll position in pixels.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.Table.GetScrollPosition(System.String)">
+            <summary>
+            Returns the current scroll position of the widget
+            </summary>
+            <param name="direction"> "x" or "y" for horizontal/vertical position </param>
+            <returns>The scroll position in pixels.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.Table.ScrollToRow(System.Nullable{System.Int32})">
+            <summary>
+            Scrolls to row.
+            </summary>
+            <param name="rowIndex">Index of the row.</param>
+            <returns>The target row.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.Table.GetCellByText(System.String)">
+            <summary>
+            Gets the cell by text.
+            </summary>
+            <param name="text">The text to search for..</param>
+            <returns>The found cell.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.Table.GetCellText(System.Int64,System.Int64)">
+            <summary>
+            Return the text in the given cell of the table.
+            </summary>
+            <param name="rowIdx"> Row index (from 0) </param>
+            <param name="colIdx"> Column index (from 0) </param>
+            <returns>Text in cell.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.Table.GetCellElement(System.Int64,System.Int64)">
+            <summary>
+            Gets the cell element.
+            </summary>
+            <param name="rowIdx">Index of the row.</param>
+            <param name="colIdx">Index of the col.</param>
+            <returns>The found cell.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.Table.GetRowIndexForCellText(System.Int64,System.String)">
+            <summary>
+            Return the index of the row containing the supplied text <code>text</code>
+            at column <code>colIdx</code>.
+            </summary>
+            <param name="colIdx"> Index of column (from 0) that should contain the text </param>
+            <param name="text"> Text to search for </param>
+            <returns>The row index (from 0) or -1 if the text was not found.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.Table.GetRowIndexesForCellText(System.Int64,System.String)">
+            <summary>
+            Return a list of indexes of rows containing the supplied text <code>text</code>
+            at column <code>colIdx</code>.
+            </summary>
+            <param name="colIdx"> Index of column (from 0) that should contain the text </param>
+            <param name="text"> Text to search for </param>
+            <returns>The a list of row indexes containing the text.</returns>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Table.Table.SelectedRanges">
+            <summary>
+            Gets the selected ranges.
+            </summary>
+            <value>
+            The selected ranges.
+            </value>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Table.Table.CellEditor">
+            <summary>
+            Gets the cell editor.
+            </summary>
+            <value>
+            The cell editor.
+            </value>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Table.Table.RowCount">
+            <summary>
+            Gets the row count.
+            </summary>
+            <value>
+            The row count.
+            </value>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.Table.SelectRow(System.Nullable{System.Int64})">
+            <summary>
+            Select the table row at position <code>rowIdx</code>.
+            </summary>
+            <param name="rowIdx"> the index of the row to select </param>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Table.Table.ColumnCount">
+            <summary>
+            Gets the column count.
+            </summary>
+            <value>
+            The column count.
+            </value>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Table.Table.SetNodeOpened(System.Nullable{System.Int64},System.Nullable{System.Boolean})">
+            <summary>
+            Select the table row at position <code>rowIdx</code>.
+            </summary>
+            <param name="rowIdx">the index of the row to select</param>
+            <param name="opened">The opened.</param>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.TabView.TabView">
+            <summary>
+            Represents a <a href="http://demo.qooxdoo.org/current/apiviewer/#qx.ui.tabview.TabView">TabView</a>
+            widget
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.TabView.TabView.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.TabView.TabView"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="webDriver">The web driver.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.TabView.TabView.GetSelectableItem(System.Nullable{System.Int32})">
+             <summary>
+             Finds a selectable child widget by index and returns it
+             </summary>
+             <param name="index">The index of the item.</param>
+             <returns>
+             The found item.
+            .</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.TabView.TabView.SelectItem(System.Nullable{System.Int32})">
+            <summary>
+            Finds a selectable child widget by index and selects it
+            </summary>
+            <param name="index">The index of the item.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.TabView.TabView.GetSelectableItem(System.String)">
+             <summary>
+             Finds the first selectable child widget with a label matching the regular
+             expression and returns it
+             </summary>
+             <param name="regex">The regular expreesion to match.</param>
+             <returns>
+             The matching item.
+            .</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.TabView.TabView.SelectItem(System.String)">
+            <summary>
+            Finds the first selectable child widget with a label matching the regular
+            expression and selects it
+            </summary>
+            <param name="regex">The regular expreesion to match.</param>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.ITouchable">
+            <summary>
+            Touchable interface
+            </summary>
+            <seealso cref="T:Qooxdoo.WebDriver.UI.IWidget" />
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.ITouchable.Tap">
+            <summary>
+            Performs a single tap on this widget.
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.ITouchable.Longtap">
+            <summary>
+            Performs a long tap on this widget.
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.ITouchable.Track(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Tracks this widget by the given offsets </summary>
+            <param name="x"> Amount of pixels to move horizontally </param>
+            <param name="y"> Amount of pixels to move vertically </param>
+            <param name="step"> Generate a move event every (step) pixels </param>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.Tree.Core.AbstractItem">
+            <summary>
+            Tree item 
+            </summary>
+            <seealso cref="T:Qooxdoo.WebDriver.UI.Core.WidgetImpl" />
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Tree.Core.AbstractItem.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.Tree.Core.AbstractItem"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="webDriver">The web driver.</param>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.Tree.Core.AbstractItem.Open">
+            <summary>
+            Gets a value indicating whether this <see cref="T:Qooxdoo.WebDriver.UI.Tree.Core.AbstractItem"/> is open.
+            </summary>
+            <value>
+              <c>true</c> if open; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Tree.Core.AbstractItem.ClickOpenCloseButton">
+            <summary>
+            Clicks the open close button.
+            </summary>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.Tree.Tree">
+            <summary>
+            Tree widget
+            </summary>
+            <seealso cref="N:Qooxdoo.WebDriver.UI.List" />
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Tree.Tree.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.Tree.Tree"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="webDriver">The web driver.</param>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.Tree.VirtualTree">
+            <summary>
+            Virtual tree widget
+            </summary>
+            <seealso cref="N:Qooxdoo.WebDriver.UI.List" />
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.Tree.VirtualTree.#ctor(OpenQA.Selenium.IWebElement,Qooxdoo.WebDriver.QxWebDriver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qooxdoo.WebDriver.UI.Tree.VirtualTree"/> class.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="webDriver">The web driver.</param>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.IWidget">
+             <summary>
+             Represents a qx.Desktop widget. <seealso cref="T:OpenQA.Selenium.IWebElement"/>
+             methods are forwarded to the widget's content element. Click() and SendKeys()
+             will generally workFor simple widgets that contain only one button and/or
+             text field.
+            
+             For more advanced interactions on composite widgets such as qx.ui.formComboBox
+             or qx.ui.tree.Tree, see the other interfaces in this namespace.
+             </summary>
+             <seealso cref="T:Qooxdoo.WebDriver.UI.IScrollable"/>
+             <seealso cref="T:Qooxdoo.WebDriver.UI.ISelectable"/>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.IWidget.QxHash">
+            <summary>
+            Gets this widget's qooxdoo object registry ID
+            </summary>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.IWidget.Classname">
+            <summary>
+            Gets this widget's qooxdoo class name
+            </summary>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.IWidget.ContentElement">
+            <summary>
+            Gets the IWebElement representing this widget's content element
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.IWidget.GetChildControl(System.String)">
+            <summary>
+            Returns a <seealso cref="T:Qooxdoo.WebDriver.UI.IWidget" /> representing a child control of this widget.
+            </summary>
+            <param name="childControlId">The child control identifier.</param>
+            <returns> The matching child widget or <c>null</c> if the child control doesn't exist.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.IWidget.WaitForChildControl(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Repeatedly checks if the child control with the given id is visible.
+            Returns the child control if successful.
+            </summary>
+            <param name="childControlId">The child control identifier.</param>
+            <param name="timeoutInSeconds">The time to wait for the child control in seconds.</param>
+            <returns>The matching child widget.</returns>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.IWidget.LayoutParent">
+            <summary>
+            Gets a <seealso cref="T:Qooxdoo.WebDriver.UI.IWidget"/> representing the layout parent.
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.IWidget.ExecuteJavascript(System.String)">
+            <summary>
+            Calls IJavaScriptExecutor.ExecuteScript. The first argument is the widget's content element.
+            </summary>
+            <param name="script">The script to execute.</param>
+            <returns>The value returned by the execution.</returns>
+            <seealso cref="T:OpenQA.Selenium.IJavaScriptExecutor" />
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.IWidget.GetPropertyValueAsJson(System.String)">
+            <summary>
+            Returns the value of a qooxdoo property on this widget, serialized in JSON  format.
+            <strong>NOTE:</strong> Never use this for property values that are instances
+            of qx.core.Object. Circular references in qooxoo's OO system will lead to
+            JavaScript errors.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+            <returns>The property value as JSON string.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.IWidget.GetPropertyValue(System.String)">
+            <summary>
+            Returns the value of a qooxdoo property on this widget. See the <seealso cref="T:OpenQA.Selenium.IJavaScriptExecutor" />
+            documentation for details on how JavaScript types are represented.
+            <strong>NOTE:</strong> Never use this for property values that are instances
+            of qx.core.Object. Circular references in qooxoo's OO system will lead to
+            JavaScript errors.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+            <returns>The property value.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.IWidget.GetWidgetListFromProperty(System.String)">
+            <summary>
+            Returns a List of <seealso cref="T:Qooxdoo.WebDriver.UI.IWidget" />s representing the value of a widget list property,
+            e.g. <a href="http://demo.qooxdoo.org/current/apiviewer/#qx.ui.core.MMultiSelectionHandling~getSelection">MMultiSelectionHandling.getSelection</a>
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+            <returns>The List of <seealso cref="T:Qooxdoo.WebDriver.UI.IWidget" />s property value.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.IWidget.GetWidgetFromProperty(System.String)">
+            <summary>
+            Returns a <seealso cref="T:Qooxdoo.WebDriver.UI.IWidget" /> representing the value of a widget property,
+            e.g. <a href="http://demo.qooxdoo.org/current/apiviewer/#qx.ui.form.MenuButton~menu!property">the
+            MenuButton's menu property</a>
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+            <returns>The <seealso cref="T:Qooxdoo.WebDriver.UI.IWidget" /> property value.</returns>
+        </member>
+        <member name="P:Qooxdoo.WebDriver.UI.IWidget.Children">
+            <summary>
+            Gets a list of <seealso cref="T:Qooxdoo.WebDriver.UI.IWidget"/> objects representing this widget's children
+            as defined using <a href="http://demo.qooxdoo.org/current/apiviewer/#qx.ui.core.MChildrenHandling~add!method_public">parent.add(child);</a> in the application code.
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.IWidget.FindWidget(OpenQA.Selenium.By)">
+            <summary>
+            Finds a widget relative to the current one by traversing the qooxdoo
+            widget hierarchy.
+            </summary>
+            <param name="by">The locating mechanism to use.</param>
+            <returns>The found widget.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.IWidget.WaitForWidget(OpenQA.Selenium.By,System.Int64)">
+            <summary>
+            Finds a widget relative to the current one by traversing the qooxdoo
+            widget hierarchy.
+            </summary>
+            <param name="by">The locating mechanism to use.</param>
+            <param name="timeoutInSeconds">The time to wait for the widget in seconds.</param>
+            <returns>The matching widget.</returns>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.IWidget.DragToWidget(Qooxdoo.WebDriver.UI.IWidget)">
+            <summary>
+            Drag and drop this widget onto another widget
+            </summary>
+            <param name="target">The target.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.IWidget.DragOver(Qooxdoo.WebDriver.UI.IWidget)">
+            <summary>
+            Drag over this widget to another widget
+            </summary>
+            <param name="target">The target.</param>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.IWidget.Drop(Qooxdoo.WebDriver.UI.IWidget)">
+            <summary>
+            Drag and drop this widget onto another widget
+            </summary>
+            <param name="target">The target.</param>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.UI.IWidgetFactory">
+            <summary>
+            Widget factory interface
+            </summary>
+        </member>
+        <member name="M:Qooxdoo.WebDriver.UI.IWidgetFactory.GetWidgetForElement(OpenQA.Selenium.IWebElement)">
+            <summary> Returns an instance of <seealso cref="T:Qooxdoo.WebDriver.UI.IWidget"/> or one of its subclasses that
+            represents the qooxdoo widget containing the given element. </summary>
+            <param name="element"> A IWebElement representing a DOM element
+            that is part of a qooxdoo widget </param>
+            <returns>The Widget object.</returns>
+        </member>
+        <member name="T:Qooxdoo.WebDriver.Browser">
+            <summary>
+            Supported browses enumeration used on <see cref="T:Qooxdoo.WebDriver.QxWebDriver"/> constructor.
+            </summary>
+        </member>
+        <member name="F:Qooxdoo.WebDriver.Browser.Chrome">
+            <summary>
+            Chrome
+            </summary>
+        </member>
+        <member name="F:Qooxdoo.WebDriver.Browser.Edge">
+            <summary>
+            Microsoft Edge
+            </summary>
+        </member>
+        <member name="F:Qooxdoo.WebDriver.Browser.Firefox">
+            <summary>
+            Firefox
+            </summary>
+        </member>
+        <member name="F:Qooxdoo.WebDriver.Browser.IE">
+            <summary>
+            Internet Explorer
+            </summary>
+        </member>
+        <member name="F:Qooxdoo.WebDriver.Browser.Opera">
+            <summary>
+            Opera
+            </summary>
+        </member>
+        <member name="F:Qooxdoo.WebDriver.Browser.PhantomJS">
+            <summary>
+            Phantom JS
+            </summary>
+        </member>
+        <member name="F:Qooxdoo.WebDriver.Browser.Safari">
+            <summary>
+            Safari
+            </summary>
+        </member>
+    </members>
+</doc>
